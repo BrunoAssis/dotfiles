@@ -20,6 +20,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,10 +37,11 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
 " COLORS
-colorscheme molokai " color scheme in ~/.vim/colors
 syntax enable
+set t_Co=256
+set background=dark
+colorscheme solarized   " color scheme in ~/.vim/colors
 
 " SPACES & TABS
 set tabstop=4
