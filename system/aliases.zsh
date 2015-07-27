@@ -1,10 +1,4 @@
-# grc overides for ls
-#   Made possible through contributions from generous benefactors like
-#   `brew install coreutils`
-if $(gls &>/dev/null)
-then
-  alias ls="gls -F --color"
-  alias l="gls -lAh --color"
-  alias ll="gls -l --color"
-  alias la='gls -A --color'
-fi
+alias open="xdg-open"
+alias lh="ls -lhart"
+alias update="sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove && sudo apt-get -y clean"
+alias curltime="curl -ivw \"@/home/bruno/curltime_output.txt\""

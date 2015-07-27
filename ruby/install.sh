@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if test ! $(which rbenv)
+if test ! $(which chruby)
 then
-  echo "  Installing rbenv for you."
-  brew install rbenv > /tmp/rbenv-install.log
+  echo "  Installing chruby for you."
+  brew install chruby > /tmp/chruby-install.log
 fi
 
 if test ! $(which ruby-build)
