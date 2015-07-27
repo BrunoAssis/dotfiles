@@ -54,7 +54,8 @@ filetype plugin indent on    " required
 
 " COLORS
 syntax enable
-set t_Co=256
+let g:solarized_termcolors=256
+set term=xterm-256color
 set background=dark
 colorscheme solarized   " color scheme in ~/.vim/colors
 
