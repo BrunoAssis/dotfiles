@@ -1,0 +1,5 @@
+alias gst="git status"
+alias gp="git push"
+alias gup="git pull --rebase"
+alias gd="git diff"
+alias gw="git wtf"
