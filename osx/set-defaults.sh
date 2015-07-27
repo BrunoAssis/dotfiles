@@ -1,3 +1,5 @@
+if [ "$PLATFORM" == "Darwin" ]
+then
 # Sets reasonable OS X defaults.
 #
 # Or, in other words, set shit how I like in OS X.
@@ -39,3 +41,4 @@
 ##defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 ##defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 ##defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+fi

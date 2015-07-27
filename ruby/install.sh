@@ -3,11 +3,17 @@
 if test ! $(which chruby)
 then
   echo "  Installing chruby for you."
-  brew install chruby > /tmp/chruby-install.log
+	if [ "$PLATFORM" == "Darwin" ]
+	then
+  		brew install chruby > /tmp/chruby-install.log
+	fi
 fi
 
 if test ! $(which ruby-build)
 then
   echo "  Installing ruby-build for you."
-  brew install ruby-build > /tmp/ruby-build-install.log
+  	if [ "$PLATFORM" == "Darwin" ]
+	then
+  		brew install ruby-build > /tmp/ruby-build-install.log
+  	fi
 fi
