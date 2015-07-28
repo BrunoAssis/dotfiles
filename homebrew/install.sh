@@ -5,7 +5,7 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-if [ "$PLATFORM" == "Darwin" ]
+if [[ "$PLATFORM" == "Darwin" ]]
 then
 	# Check for Homebrew
 	if test ! $(which brew)
@@ -15,7 +15,7 @@ then
 	fi
 
 	# Install homebrew packages
-	brew install grc coreutils spark
+	brew install grc coreutils spark moreutils findutils
 
 	exit 0
 fi

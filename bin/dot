@@ -6,11 +6,24 @@
 # to make sure you're on the latest and greatest.
 export ZSH=$HOME/.dotfiles
 
-# Set OS X defaults
-$ZSH/osx/set-defaults.sh
+if [[ "$PLATFORM" == "Darwin" ]]
+then
+    echo "Setting OS X defaults"
+    # Set OS X defaults
+    $ZSH/osx/set-defaults.sh
 
-# Upgrade homebrew
-brew update
+    echo "Upgrading homebrew"
+    # Upgrade homebrew
+    brew update -y
+    brew upgrade -y
 
-# Install homebrew packages
-$ZSH/homebrew/install.sh 2>&1
+    echo "Installing homebrew packages"
+    # Install homebrew packages
+    $ZSH/homebrew/install.sh 2>&1
+fi
+
+if [[ "$PLATFORM" == "Linux" ]]
+then
+    echo "Upgrading apt-get"
+    sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove && sudo apt-get -y clean
+fi

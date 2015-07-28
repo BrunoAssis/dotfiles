@@ -1,4 +1,9 @@
-alias open="xdg-open"
+#!/bin/sh
+if [[ "$PLATFORM" == "Linux" ]]
+then
+  alias open="xdg-open"
+fi
+
 alias lh="ls -lhart"
 alias ll="ls -l"
-alias update="sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove && sudo apt-get -y clean"
+alias flushdns='sudo discoveryutil udnsflushcaches'
