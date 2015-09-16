@@ -2,6 +2,7 @@
 .idea/
 .gradle/
 gradle/
+.bundle/
 *~
 *.swp
 *.iml
