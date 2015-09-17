@@ -31,5 +31,5 @@ done
 
 unset config_files
 
-# Change default Ruby to 2.2.2
-chruby 2.2.2
+# Change default Ruby to 2.2.3
+chruby 2.2.3
