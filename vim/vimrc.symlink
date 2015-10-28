@@ -59,6 +59,9 @@ set term=xterm-256color
 set background=dark
 colorscheme solarized   " color scheme in ~/.vim/colors
 
+" FONTS
+set guifont=Menlo\ Regular:h16
+
 " SPACES & TABS
 set tabstop=4
 set softtabstop=4
