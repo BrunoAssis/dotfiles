@@ -54,9 +54,12 @@ filetype plugin indent on    " required
 
 " COLORS
 syntax enable
-let g:solarized_termcolors=256
+set t_Co=256
 set term=xterm-256color
 set background=dark
+let g:solarized_termcolors=16
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized   " color scheme in ~/.vim/colors
 
 " FONTS
