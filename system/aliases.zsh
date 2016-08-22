@@ -7,4 +7,3 @@ fi
 alias lh="ls -lhart"
 alias ll="ls -l"
 alias flushdns='sudo discoveryutil udnsflushcaches'
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
