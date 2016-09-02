@@ -45,6 +45,13 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 " R
 Plugin 'jalvesaq/Nvim-R'
 
+" Clojure
+Plugin 'luochen1990/rainbow'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-highlight' " Depends on vim-clojure-static
+                                    " and vim-fireplace
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,6 +80,7 @@ let g:solarized_termcolors=16
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 colorscheme solarized   " color scheme in ~/.vim/colors
+let g:rainbow_active = 1 " Rainbow Parentheses
 
 " FONTS
 set guifont=Menlo\ Regular:h16
