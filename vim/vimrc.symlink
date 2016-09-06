@@ -51,6 +51,9 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-highlight' " Depends on vim-clojure-static
                                     " and vim-fireplace
+Plugin 'tpope/vim-repeat'
+Plugin 'guns/vim-sexp'              " Depends on vim-repeat
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
