@@ -45,6 +45,9 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 " R
 Plugin 'jalvesaq/Nvim-R'
 
+" Crystal
+Plugin 'rhysd/vim-crystal'
+
 " Clojure
 Plugin 'luochen1990/rainbow'
 Plugin 'guns/vim-clojure-static'
