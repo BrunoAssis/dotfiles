@@ -45,6 +45,9 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 " R
 Plugin 'jalvesaq/Nvim-R'
 
+" Crystal
+Plugin 'rhysd/vim-crystal'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
