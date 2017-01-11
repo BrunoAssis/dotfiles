@@ -48,6 +48,10 @@ Plugin 'jalvesaq/Nvim-R'
 " Crystal
 Plugin 'rhysd/vim-crystal'
 
+" Lua
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'xolox/vim-misc'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
