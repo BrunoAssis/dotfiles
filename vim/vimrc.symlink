@@ -97,6 +97,7 @@ set guifont=Menlo\ Regular:h16
 set tabstop=4
 set softtabstop=4
 set expandtab 		" tabs are spaces
+autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " UI CONFIG
 set number 		    " show line numbers
