@@ -133,9 +133,15 @@ Plug 'mattn/emmet-vim'
 " javascript
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
+Plug 'jason0x43/vim-js-indent'
 
+Plug 'Quramy/vim-js-pretty-template'
 Plug 'othree/yajs.vim'
 Plug 'mxw/vim-jsx'
+
+" typescript
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
 
 " perl
 "" Perl Bundle
