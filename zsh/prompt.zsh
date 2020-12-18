@@ -29,7 +29,6 @@ git_dirty() {
 
 git_prompt_info () {
  ref=$($git symbolic-ref HEAD 2>/dev/null) || return
-# echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
  echo "${ref#refs/heads/}"
 }
 
@@ -46,17 +45,14 @@ need_push () {
   fi
 }
 
-ruby_version() {
-  if (( $+commands[ruby] ))
-  then
-    echo "$(ruby -v | awk '{print $2}')"
-  fi
+asdf_version() {
+  echo "$(cat .tool-versions)"
 }
 
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
+asdf_prompt() {
+  if [[ -f .tool-versions ]]
   then
-    echo "%{$fg[yellow]%}$(ruby_version)%{$reset_color%} "
+    echo "%{$fg[yellow]%}$(asdf_version)%{$reset_color%} in "
   else
     echo ""
   fi
@@ -72,7 +68,7 @@ return_status() {
 
 # Old oh-my-zsh PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_>'
 # Using rbenv (must figure out how to use asdf) - export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n$(return_status) '
-export PROMPT=$'\n$(directory_name) $(git_dirty)$(need_push)\n$(return_status) '
+export PROMPT=$'\n$(asdf_prompt)$(directory_name) $(git_dirty)$(need_push)\n$(return_status) '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
