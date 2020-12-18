@@ -30,6 +30,3 @@ do
 done
 
 unset config_files
-
-# Hack needed for rbenv
-eval "$(rbenv init -)"
