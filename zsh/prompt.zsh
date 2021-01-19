@@ -46,7 +46,7 @@ need_push () {
 }
 
 asdf_version() {
-  echo "$(cat .tool-versions)"
+  echo "$(cat .tool-versions | paste -sd , -)"
 }
 
 asdf_prompt() {
