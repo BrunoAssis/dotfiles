@@ -7,3 +7,4 @@ gradle/
 *.swp
 *.iml
 .httr-oauth
+.tool-versions
