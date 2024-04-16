@@ -1,6 +1,6 @@
 if [[ "$PLATFORM" == "Darwin" ]]
 then
-    . /opt/homebrew/opt/asdf/asdf.sh
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 
 if [[ "$PLATFORM" == "Linux" ]]
