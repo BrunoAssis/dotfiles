@@ -17,7 +17,7 @@ then
 
     echo "Upgrading homebrew"
     # Upgrade homebrew
-    brew update -y
+    brew update
     brew upgrade
 
     echo "Installing homebrew packages"
