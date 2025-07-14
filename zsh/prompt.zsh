@@ -45,14 +45,53 @@ need_push () {
   fi
 }
 
-asdf_version() {
-  echo "$(cat .tool-versions | paste -sd , -)"
+mise_version() {
+  local output=$(mise ls -c --no-header)
+  local local_tools=""
+  local global_tools=""
+  
+  while IFS= read -r line; do
+    if [[ -n "$line" ]]; then
+      local tool=$(echo "$line" | awk '{print $1}')
+      local version=$(echo "$line" | awk '{print $2}')
+      local location=$(echo "$line" | awk '{print $3}')
+      
+      if [[ "$location" == *"/.config/mise/config.toml" ]]; then
+        if [[ -n "$global_tools" ]]; then
+          global_tools="$global_tools, $tool $version"
+        else
+          global_tools="$tool $version"
+        fi
+      else
+        if [[ -n "$local_tools" ]]; then
+          local_tools="$local_tools, $tool $version"
+        else
+          local_tools="$tool $version"
+        fi
+      fi
+    fi
+  done <<< "$output"
+  
+  local result=""
+  if [[ -n "$local_tools" ]]; then
+    result="$local_tools"
+  fi
+  
+  if [[ -n "$global_tools" ]]; then
+    if [[ -n "$result" ]]; then
+      result="$result 🌎 $global_tools"
+    else
+      result="🌎 $global_tools"
+    fi
+  fi
+  
+  echo "$result"
 }
 
-asdf_prompt() {
-  if [[ -f .tool-versions ]]
+mise_prompt() {
+  if (( $+commands[mise] ))
   then
-    echo "%{$fg[yellow]%}$(asdf_version)%{$reset_color%} in "
+    echo "%{$fg[yellow]%}$(mise_version)%{$reset_color%} in "
   else
     echo ""
   fi
@@ -66,9 +105,7 @@ return_status() {
   echo "%(?:%{$fg[green]%}➜ :%{$fg[red]%}➜ %s)"
 }
 
-# Old oh-my-zsh PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_>'
-# Using rbenv (must figure out how to use asdf) - export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n$(return_status) '
-export PROMPT=$'\n$(asdf_prompt)$(directory_name) $(git_dirty)$(need_push)\n$(return_status) '
+export PROMPT=$'\n$(mise_prompt)$(directory_name) $(git_dirty)$(need_push)\n$(return_status) '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
