@@ -1,0 +1,3 @@
+ai() {
+    llm -m gpt-oss:20b -s "You are a helpful assistant inside the mac OS console. Answer the next question. Answer should be short and precise, the shorter the better." "$1"
+}
