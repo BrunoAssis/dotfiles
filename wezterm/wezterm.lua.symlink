@@ -11,6 +11,8 @@ config.font_size = 16
 
 config.window_decorations = 'RESIZE'
 
+config.color_scheme = 'Tokyo Night'
+
 config.keys = {
     {
         key = "Enter",
