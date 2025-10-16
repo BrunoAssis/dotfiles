@@ -1,36 +1,45 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
-config.font = wezterm.font('FiraCode Nerd Font', {weight = 'DemiBold'})
+config.font = wezterm.font("FiraCode Nerd Font", { weight = "DemiBold" })
 config.font_size = 16
 
-config.window_decorations = 'RESIZE'
+config.window_decorations = "RESIZE"
+config.enable_tab_bar = false
 
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = "Tokyo Night"
 
 config.keys = {
-    {
-        key = "Enter",
-        mods = "SHIFT",
-        action = wezterm.action {SendString = "\x1b\r"}
-    }, {
-        key = "w",
-        mods = "CMD",
-        action = wezterm.action.CloseCurrentPane {confirm = false}
-    }, {
-        key = "d",
-        mods = "CMD",
-        action = wezterm.action.SplitHorizontal {domain = 'CurrentPaneDomain'}
-    }, {
-        key = "d",
-        mods = "CMD|SHIFT",
-        action = wezterm.action.SplitVertical {domain = 'CurrentPaneDomain'}
-    }
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action({ SendString = "\x1b\r" }),
+	},
+	{
+		key = "w",
+		mods = "CMD",
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
+	},
+	{
+		key = "d",
+		mods = "CMD",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "d",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "Tab",
+		mods = "CTRL",
+		action = wezterm.action.ShowTabNavigator,
+	},
 }
 
 -- and finally, return the configuration to wezterm
