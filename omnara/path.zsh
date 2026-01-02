@@ -1,0 +1,1 @@
+export PATH="$PATH:$OMNARA_INSTALL/bin"
